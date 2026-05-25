@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orçamento Comunicação Visual v12.9</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f4;color:#1f1f1f;line-height:1.5;padding:16px}.container{max-width:1220px;margin:auto}header,.tabs,.card{background:#fff;border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,.05)}header{padding:16px 20px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;gap:12px}h1{font-size:21px}.muted,label{color:#6b7280;font-size:13px}#status-sync{font-size:12px;color:#16a34a;display:flex;align-items:center;gap:6px}.erro{color:#dc2626!important}.salvando{color:#d97706!important}.dot{width:8px;height:8px;border-radius:50%;background:currentColor}.tabs{display:flex;gap:4px;margin-bottom:16px;padding:6px;overflow-x:auto}.tab-btn{background:transparent;color:#6b7280;border:0;padding:10px 16px;border-radius:9px;cursor:pointer;white-space:nowrap;font-weight:600}.tab-btn.active{background:#1f1f1f;color:white}.card{padding:20px;margin-bottom:16px}.tab-content{display:none}.tab-content.active{display:block}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}@media(max-width:850px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}header{align-items:flex-start;flex-direction:column}}input,select,textarea{width:100%;padding:10px 12px;border:1px solid #e5e5e4;border-radius:9px;background:#fff;font:inherit}textarea{min-height:72px;resize:vertical}input:focus,select:focus,textarea:focus{outline:none;border-color:#1f1f1f}button{background:#1f1f1f;color:#fff;border:0;padding:10px 14px;border-radius:9px;cursor:pointer;font-weight:700}button.secondary{background:#fff;color:#1f1f1f;border:1px solid #e5e5e4}button.danger{background:#dc2626}button.ok{background:#16a34a}button.blue{background:#2563eb}button.orange{background:#f97316}button:disabled{opacity:.45;cursor:not-allowed}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.actions button{flex:1;min-width:130px}h2{font-size:18px;margin-bottom:4px}h3{font-size:15px;margin:18px 0 10px}.box{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:14px}.item{background:#f5f5f4;border:1px solid #e5e5e4;border-radius:12px;padding:14px;margin-bottom:10px}.item-top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}.item-title{font-weight:800}.item-meta{font-size:12px;color:#6b7280;margin-top:3px}.price{font-size:18px;color:#16a34a;font-weight:900;white-space:nowrap}.toolbar{display:flex;gap:8px;margin:16px 0;flex-wrap:wrap}.toolbar input,.toolbar select{flex:1;min-width:180px}.empty{text-align:center;padding:30px;color:#9ca3af}.mini{font-size:12px;padding:7px 10px}.resumo{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:14px}.resumo .box strong{font-size:17px}.badge{display:inline-block;font-size:11px;border-radius:999px;padding:3px 8px;font-weight:800}.rascunho{background:#e5e7eb;color:#374151}.pendente{background:#fef3c7;color:#92400e}.enviado{background:#dbeafe;color:#1e40af}.aprovado{background:#dcfce7;color:#166534}.recusado,.cancelado{background:#fee2e2;color:#991b1b}.em_producao{background:#f3e8ff;color:#6b21a8}.finalizado{background:#ccfbf1;color:#115e59}.hidden{display:none!important}.table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}.table th,.table td{border-bottom:1px solid #e5e7eb;padding:9px;text-align:left;vertical-align:top}.table th{color:#6b7280;font-size:12px;background:#f8fafc}.alert{background:#fff7ed;border-left:4px solid #f97316;padding:12px 14px;border-radius:9px;margin-bottom:12px;color:#7c2d12;font-size:13px}.okline{background:#ecfdf5;border-left:4px solid #16a34a;color:#166534}.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#374151;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:10px;margin-top:10px}.detalhe-toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.detalhe-card{border:1px solid #e5e7eb;border-radius:12px;background:#fff;margin:10px 0;overflow:hidden}.detalhe-card summary{list-style:none;cursor:pointer;padding:12px 14px;background:#f8fafc;display:flex;justify-content:space-between;gap:12px;align-items:center}.detalhe-card summary::-webkit-details-marker{display:none}.detalhe-card summary:before{content:'+';display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:999px;background:#1f1f1f;color:#fff;font-weight:900;margin-right:8px;flex:0 0 22px}.detalhe-card[open] summary:before{content:'−'}.detalhe-head{display:flex;align-items:center;gap:8px;min-width:0}.detalhe-head strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.detalhe-custo{font-size:16px;color:#16a34a;font-weight:900;white-space:nowrap}.detalhe-body{padding:14px}.calc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.calc-box{background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;padding:10px}.calc-box small{display:block;color:#6b7280;font-size:11px}.calc-box strong{font-size:14px}.detalhe-total{margin-top:12px;padding:12px;border-radius:10px;background:#ecfdf5;border:1px solid #bbf7d0;color:#166534}.split{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+.form-section{border:1px solid #e5e7eb;background:#fff;border-radius:14px;padding:16px;margin-top:14px}.form-section h3{margin:0 0 12px;font-size:16px;display:flex;align-items:center;gap:8px}.section-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:999px;background:#1f1f1f;color:#fff;font-size:12px;font-weight:900}.destaque-medidas{border:2px solid #1f1f1f;background:#fafafa;box-shadow:0 4px 14px rgba(0,0,0,.06)}.medidas-grid{display:grid;grid-template-columns:1.2fr repeat(3,.75fr);gap:12px;align-items:end}.campo-destaque label{color:#111827;font-weight:800}.campo-destaque input,.campo-destaque select{border:2px solid #d1d5db;background:#fff;font-size:18px;font-weight:800;padding:14px 12px}.campo-destaque input:focus,.campo-destaque select:focus{border-color:#1f1f1f;box-shadow:0 0 0 3px rgba(31,31,31,.08)}.section-help{font-size:12px;color:#6b7280;margin:-4px 0 12px}.orc-condicoes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.orc-actions-sticky{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:12px;margin-top:14px}.hidden-field{display:none!important}@media(max-width:950px){.medidas-grid,.orc-condicoes-grid{grid-template-columns:1fr 1fr}}@media(max-width:650px){.medidas-grid,.orc-condicoes-grid{grid-template-columns:1fr}.campo-destaque input,.campo-destaque select{font-size:16px}}
+.simulador-produto{border:2px solid #1f1f1f;background:#fafafa}.sim-result{margin-top:14px}.sim-result-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.sim-result-grid .box strong{font-size:17px}.sim-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.sim-actions button{flex:1;min-width:150px}.sim-table{margin-top:10px}.sim-dica{background:#eef2ff;border-left:4px solid #2563eb;color:#1e3a8a;padding:12px 14px;border-radius:9px;margin-top:12px;font-size:13px}@media(max-width:900px){.sim-result-grid{grid-template-columns:1fr 1fr}}@media(max-width:850px){.resumo{grid-template-columns:1fr 1fr}.item-top{flex-direction:column}.price{white-space:normal}.table{font-size:12px}.split{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div><h1>Orçamento Comunicação Visual v12.9</h1><p class="muted">Matéria-prima → Produto/receita → Cliente → Orçamento profissional simples</p></div>
+  <div id="status-sync"><span class="dot"></span><span id="status-texto">Conectando...</span></div>
+</header>
+
+<div class="tabs">
+  <button class="tab-btn active" data-tab="materia">Matéria-Prima</button>
+  <button class="tab-btn" data-tab="produtos">Produtos</button>
+  <button class="tab-btn" data-tab="clientes">Clientes</button>
+  <button class="tab-btn" data-tab="composicao">Composição</button>
+  <button class="tab-btn" data-tab="orcamento">Orçamento</button>
+</div>
+
+<section id="tab-materia" class="tab-content active">
+  <div class="card">
+    <h2>Matéria-Prima</h2><p class="muted">Cadastre materiais, mão de obra e custos por unidade.</p>
+    <input type="hidden" id="mp-id">
+    <div class="grid-4" style="margin-top:16px">
+      <div><label>Nome do Material *</label><input id="mp-nome" placeholder="Ex: Chapa PS 2mm"></div>
+      <div><label>Categoria</label><input id="mp-categoria" placeholder="Chapas, Adesivos, Mão de obra..."></div>
+      <div><label>Unidade *</label><select id="mp-unidade"><option value="m²">m²</option><option value="metro_linear">metro linear</option><option value="unidade">unidade</option><option value="litro">litro</option><option value="ml">ml</option><option value="hora">hora</option><option value="hora_maquina">hora máquina</option><option value="hora_homem">hora homem</option></select></div>
+      <div><label>Valor Unitário (R$) *</label><input type="number" id="mp-valor" step="0.01" min="0" value="0"></div>
+      <div><label>Perda (%)</label><input type="number" id="mp-perda" step="0.01" min="0" value="0"></div>
+      <div><label>Estoque</label><input type="number" id="mp-estoque" step="0.001" min="0" value="0"></div>
+      <div><label>Estoque mínimo</label><input type="number" id="mp-estoque-minimo" step="0.001" min="0" value="0"></div>
+      <div><label>Código Interno</label><input id="mp-codigo"></div>
+      <div><label>Fornecedor</label><input id="mp-fornecedor"></div>
+      <div style="grid-column:span 3"><label>Observações</label><input id="mp-obs"></div>
+    </div>
+    <div class="actions"><button id="btn-mp-salvar">Salvar matéria-prima</button><button class="secondary" id="btn-mp-limpar">Limpar</button></div>
+    <div class="toolbar"><input id="mp-busca" placeholder="Buscar matéria-prima..."><button class="secondary" id="btn-mp-refresh">Atualizar</button></div>
+    <div id="mp-lista"><p class="empty">Carregando...</p></div>
+  </div>
+</section>
+
+<section id="tab-produtos" class="tab-content">
+  <div class="card">
+    <h2>Produtos</h2><p class="muted">O produto é uma receita/modelo. A medida entra só no orçamento.</p>
+    <input type="hidden" id="prod-id">
+    <div class="grid-2" style="margin-top:16px">
+      <div><label>Nome Produto *</label><input id="prod-nome" placeholder="Ex: Placa em PS"></div>
+      <div><label>Categoria</label><input id="prod-categoria" placeholder="Placas, Fachadas, Banners..."></div>
+      <div><label>Margem Padrão (%)</label><input type="number" id="prod-margem" step="0.01" min="0" value="40"></div>
+      <div><label>Tipo de Cálculo</label><select id="prod-tipo"><option value="por_area">Por Área</option><option value="por_metro_linear">Por Metro Linear</option><option value="por_unidade">Por Unidade</option><option value="por_hora">Por Hora</option></select></div>
+    </div>
+    <div style="margin-top:12px"><label>Descrição</label><textarea id="prod-desc" placeholder="Ex: Placa em PS com adesivo impresso aplicado"></textarea></div>
+    <div class="actions"><button id="btn-prod-salvar">Salvar produto</button><button class="secondary" id="btn-prod-limpar">Limpar</button></div>
+    <div class="toolbar"><input id="prod-busca" placeholder="Buscar produto..."><button class="secondary" id="btn-prod-refresh">Atualizar</button></div>
+    <div id="prod-lista"><p class="empty">Carregando...</p></div>
+  </div>
+
+  <div class="card simulador-produto">
+    <h2>Simulador de custo e preço do produto</h2>
+    <p class="muted">Use a composição já cadastrada para estimar o custo antes de definir a margem padrão de venda. Essa simulação não salva orçamento.</p>
+    <div class="grid-4" style="margin-top:16px">
+      <div style="grid-column:span 2"><label>Produto para simular</label><select id="prod-calc-produto"><option value="">Selecione...</option></select></div>
+      <div><label>Largura referência (cm)</label><input type="number" id="prod-calc-largura" step="0.01" min="0" value="100"></div>
+      <div><label>Altura referência (cm)</label><input type="number" id="prod-calc-altura" step="0.01" min="0" value="100"></div>
+      <div><label>Quantidade referência</label><input type="number" id="prod-calc-qtd" step="1" min="1" value="1"></div>
+      <div><label>Margem desejada (%)</label><input type="number" id="prod-calc-margem" step="0.01" min="0" value="40"></div>
+      <div><label>Ou preço de venda desejado (R$)</label><input type="number" id="prod-calc-preco" step="0.01" min="0" value="0"></div>
+      <div><label>Modo</label><select id="prod-calc-modo"><option value="margem">Calcular venda pela margem</option><option value="preco">Calcular margem pelo preço</option></select></div>
+    </div>
+    <div class="actions"><button class="blue" id="btn-prod-calc">Calcular custo do produto</button><button class="secondary" id="btn-prod-aplicar-margem">Aplicar margem no cadastro</button></div>
+    <div id="prod-calc-resultado" class="sim-result"><p class="empty">Selecione um produto com composição e clique em calcular.</p></div>
+  </div>
+</section>
+
+<section id="tab-clientes" class="tab-content">
+  <div class="card">
+    <h2>Clientes</h2><p class="muted">Cadastro simples para puxar dados automaticamente no orçamento.</p>
+    <input type="hidden" id="cli-id">
+    <div class="grid-3" style="margin-top:16px">
+      <div><label>Nome *</label><input id="cli-nome" placeholder="Cliente ou empresa"></div>
+      <div><label>CPF/CNPJ</label><input id="cli-documento"></div>
+      <div><label>Tipo de cliente</label><select id="cli-tipo"><option value="final">Cliente final</option><option value="revenda">Revenda</option><option value="governo">Governo</option><option value="parceiro">Parceiro</option></select></div>
+      <div><label>Telefone</label><input id="cli-telefone"></div>
+      <div><label>WhatsApp</label><input id="cli-whatsapp" placeholder="67999999999"></div>
+      <div><label>E-mail</label><input id="cli-email"></div>
+      <div><label>Cidade</label><input id="cli-cidade"></div>
+      <div style="grid-column:span 2"><label>Endereço</label><input id="cli-endereco"></div>
+    </div>
+    <div style="margin-top:12px"><label>Observações</label><textarea id="cli-obs"></textarea></div>
+    <div class="actions"><button id="btn-cli-salvar">Salvar cliente</button><button class="secondary" id="btn-cli-limpar">Limpar</button></div>
+    <div class="toolbar"><input id="cli-busca" placeholder="Buscar cliente..."><button class="secondary" id="btn-cli-refresh">Atualizar</button></div>
+    <div id="cli-lista"><p class="empty">Carregando...</p></div>
+  </div>
+</section>
+
+<section id="tab-composicao" class="tab-content">
+  <div class="card">
+    <h2>Composição de Produtos</h2><p class="muted">Vincule matérias-primas e mão de obra ao produto.</p>
+    <div class="grid-2" style="margin-top:16px">
+      <div><label>Produto *</label><select id="comp-produto"><option value="">Selecione...</option></select></div>
+      <div><label>Matéria-Prima *</label><select id="comp-materia"><option value="">Selecione...</option></select></div>
+      <div><label>Tipo Consumo *</label><select id="comp-tipo"><option value="por_area">por_area</option><option value="por_metro_linear">por_metro_linear</option><option value="por_unidade">por_unidade</option><option value="fixo">fixo</option><option value="hora_maquina">hora_maquina</option><option value="hora_homem">hora_homem</option><option value="por_hora">por_hora legado</option></select></div>
+      <div><label id="comp-fator-label">Fator Consumo *</label><input type="number" id="comp-fator" step="0.0001" min="0" value="1"><p class="muted" id="comp-fator-ajuda" style="margin-top:4px">Informe quantos m² de material consome para cada 1 m² do produto.</p></div>
+    </div>
+    <div style="margin-top:12px"><label>Observação</label><input id="comp-obs" placeholder="Ex: adesivo aplicado na frente, fator 1"></div>
+    <div class="formula" id="comp-formula-ajuda">Exemplo: por_area com fator 1 consome 1 m² de material para cada 1 m² do produto. Para mão de obra, selecione hora_homem. Para máquina, selecione hora_maquina; o tempo poderá ser ajustado no orçamento.</div>
+    <div class="actions"><button id="btn-comp-add">Adicionar item</button><button class="secondary" id="btn-comp-refresh">Atualizar composição</button></div>
+    <div id="comp-lista"><p class="empty">Selecione um produto para ver a composição.</p></div>
+  </div>
+</section>
+
+<section id="tab-orcamento" class="tab-content">
+  <div class="card">
+    <h2>Realizar Orçamento</h2><p class="muted">Preencha cliente, produto, medidas e condições comerciais. A margem fica oculta e é aplicada pelo cadastro do produto.</p>
+    <input type="hidden" id="orc-id">
+
+    <div class="form-section">
+      <h3><span class="section-num">1</span> Cliente</h3>
+      <p class="section-help">Selecione um cliente cadastrado ou preencha os dados manualmente.</p>
+      <div class="grid-3">
+        <div><label>Cliente cadastrado</label><select id="orc-cliente-id"><option value="">Cliente avulso...</option></select></div>
+        <div><label>Cliente / Identificação</label><input id="orc-cliente" placeholder="Ex: João / Empresa X"></div>
+        <div><label>WhatsApp</label><input id="orc-whatsapp" placeholder="67999999999"></div>
+      </div>
+    </div>
+
+    <div class="form-section destaque-medidas">
+      <h3><span class="section-num">2</span> Produto, medida e quantidade</h3>
+      <p class="section-help">Área de preenchimento principal do orçamento. Informe o produto, a quantidade e a medida final em centímetros.</p>
+      <div class="medidas-grid">
+        <div class="campo-destaque"><label>Produto *</label><select id="orc-produto"><option value="">Selecione...</option></select></div>
+        <div class="campo-destaque"><label>Quantidade *</label><input type="number" id="orc-qtd" step="1" min="1" value="1"></div>
+        <div class="campo-destaque"><label>Largura (cm)</label><input type="number" id="orc-largura" step="0.01" min="0" value="35"></div>
+        <div class="campo-destaque"><label>Altura (cm)</label><input type="number" id="orc-altura" step="0.01" min="0" value="45"></div>
+      </div>
+    </div>
+
+    <div id="orc-tempos-maquina" class="box hidden" style="margin-top:12px">
+      <h3 style="margin-top:0">Tempo de hora máquina</h3>
+      <p class="muted">Este campo aparece automaticamente quando o produto selecionado possui itens de hora máquina na composição. Informe o tempo real deste orçamento.</p>
+      <div id="orc-tempos-maquina-lista" class="grid-3" style="margin-top:12px"></div>
+    </div>
+
+    <div class="form-section">
+      <h3><span class="section-num">3</span> Condições comerciais</h3>
+      <p class="section-help">Informe o desconto em reais. O sistema mostra Subtotal, Desconto e Total final. A margem do produto continua oculta.</p>
+      <input type="hidden" id="orc-margem" value="40">
+      <input type="hidden" id="orc-desc-pct" value="0">
+      <div class="orc-condicoes-grid">
+        <div><label>Status</label><select id="orc-status-form"><option value="rascunho">Rascunho</option><option value="pendente" selected>Pendente</option><option value="enviado">Enviado</option><option value="aprovado">Aprovado</option><option value="recusado">Recusado</option><option value="em_producao">Em produção</option><option value="finalizado">Finalizado</option><option value="cancelado">Cancelado</option></select></div>
+        <div><label>Desconto (R$)</label><input type="number" id="orc-desc-valor" step="0.01" min="0" value="0"></div>
+        <div><label>Entrada / Sinal R$</label><input type="number" id="orc-entrada" step="0.01" min="0" value="0"></div>
+        <div><label>Validade (dias)</label><input type="number" id="orc-validade" step="1" min="1" value="7"></div>
+        <div><label>Prazo de entrega</label><input id="orc-prazo" placeholder="Ex: 5 dias úteis"></div>
+        <div><label>Forma de pagamento</label><input id="orc-pagamento" placeholder="Pix, dinheiro, cartão..."></div>
+      </div>
+      <div style="margin-top:12px"><label>Observações para o cliente</label><textarea id="orc-obs" placeholder="Ex: Instalação não inclusa. Arte final enviada pelo cliente."></textarea></div>
+    </div>
+
+    <div class="actions orc-actions-sticky"><button id="btn-orc-calcular">Calcular</button><button class="secondary" id="btn-orc-salvar">Salvar orçamento</button><button class="secondary" id="btn-orc-pdf">PDF</button><button class="secondary" id="btn-orc-whats">WhatsApp</button><button class="secondary" id="btn-orc-limpar">Limpar</button></div>
+    <div id="orc-resultado" class="hidden">
+      <div class="resumo">
+        <div class="box"><small>Área unitária</small><br><strong id="res-area">0 m²</strong></div>
+        <div class="box"><small>Área total</small><br><strong id="res-area-total">0 m²</strong></div>
+        <div class="box"><small>Subtotal</small><br><strong id="res-subtotal">R$ 0,00</strong></div>
+        <div class="box"><small>Desconto</small><br><strong id="res-desconto">R$ 0,00</strong></div>
+        <div class="box"><small>Total final</small><br><strong id="res-venda">R$ 0,00</strong></div>
+      </div>
+      <div class="resumo">
+        <div class="box"><small>Preço unitário</small><br><strong id="res-unit">R$ 0,00</strong></div>
+        <div class="box"><small>Entrada</small><br><strong id="res-entrada">R$ 0,00</strong></div>
+        <div class="box"><small>Saldo</small><br><strong id="res-saldo">R$ 0,00</strong></div>
+        <div class="box"><small>Validade</small><br><strong id="res-validade">7 dias</strong></div>
+        <div class="box"><small>Prazo</small><br><strong id="res-prazo">-</strong></div>
+      </div>
+      <h3>Detalhamento interno dos materiais</h3>
+      <div id="res-detalhes"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap"><div><h2>Orçamentos Salvos</h2><p class="muted">Editar, enviar, aprovar, produzir e finalizar.</p></div><button class="secondary" id="btn-orc-refresh">Atualizar</button></div>
+    <div class="toolbar"><input id="orc-busca" placeholder="Buscar orçamento..."><select id="orc-status"><option value="">Todos</option><option value="rascunho">Rascunho</option><option value="pendente">Pendentes</option><option value="enviado">Enviados</option><option value="aprovado">Aprovados</option><option value="em_producao">Em produção</option><option value="finalizado">Finalizados</option><option value="recusado">Recusados</option><option value="cancelado">Cancelados</option></select></div>
+    <div id="orc-lista"><p class="empty">Carregando...</p></div>
+  </div>
+</section>
+</div>
+
+<script type="module">
+const SUPABASE_URL = 'https://amqxufmspzdwomzwygtz.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFtcXh1Zm1zcHpkd29tend5Z3R6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk2NjU1MDEsImV4cCI6MjA5NTI0MTUwMX0.tg9Lx-G8yHxy1HPy9D8PQjCzC3NH8YJZHGst2-b3HBM';
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const $ = id => document.getElementById(id);
+const val = id => $(id)?.value?.trim() || '';
+const num = id => parseFloat($(id)?.value || '0') || 0;
+const fmt = v => 'R$ ' + (Math.round((Number(v)||0)*100)/100).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+const m2fmt = v => (Math.round((Number(v)||0)*10000)/10000).toLocaleString('pt-BR',{minimumFractionDigits:4,maximumFractionDigits:4}) + ' m²';
+const esc = s => String(s ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+const statusText = $('status-texto'), statusBox = $('status-sync');
+function setStatus(t, cls=''){statusText.textContent=t;statusBox.className=cls;}
+function toast(t){alert(t)}
+function normaliza(t){return String(t||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()}
+function limpaTel(t){return String(t||'').replace(/\D/g,'')}
+
+let materias=[], produtos=[], clientes=[], composicoes=[], orcamentos=[], ultimoCalculo=null;
+
+async function loadAll(){
+  try{
+    setStatus('Sincronizando...','salvando');
+    const [mp, pr, cli, co, orc] = await Promise.all([
+      supabase.from('materias_primas').select('*').order('nome'),
+      supabase.from('produtos').select('*').order('nome'),
+      supabase.from('clientes').select('*').order('nome'),
+      supabase.from('produto_composicao').select('*, materias_primas(*)').order('criado_em'),
+      supabase.from('orcamentos').select('*').order('criado_em',{ascending:false}).limit(300)
+    ]);
+    if(mp.error) throw mp.error; if(pr.error) throw pr.error; if(cli.error) throw cli.error; if(co.error) throw co.error; if(orc.error) throw orc.error;
+    materias=mp.data||[]; produtos=pr.data||[]; clientes=cli.data||[]; composicoes=co.data||[]; orcamentos=orc.data||[];
+    renderAll(); setStatus('Sincronizado');
+  }catch(e){console.error(e); setStatus('Erro no banco','erro'); toast('Erro ao carregar dados. Rode o SQL v12 no Supabase. Detalhe: '+e.message)}
+}
+function renderAll(){renderMaterias(); renderProdutos(); renderClientes(); renderSelects(); renderComposicao(); renderOrcamentos();}
+function renderSelects(){
+  const prodOpts = '<option value="">Selecione...</option>' + produtos.map(p=>`<option value="${p.id}">${esc(p.nome)}</option>`).join('');
+  $('comp-produto').innerHTML = prodOpts; $('orc-produto').innerHTML = prodOpts; if($('prod-calc-produto')) $('prod-calc-produto').innerHTML = prodOpts;
+  $('comp-materia').innerHTML = '<option value="">Selecione...</option>' + materias.map(m=>`<option value="${m.id}">${esc(m.nome)} · ${esc(m.unidade_medida)} · ${fmt(m.valor_unitario)}</option>`).join('');
+  $('orc-cliente-id').innerHTML = '<option value="">Cliente avulso...</option>' + clientes.map(c=>`<option value="${c.id}">${esc(c.nome)}${c.whatsapp?' · '+esc(c.whatsapp):''}</option>`).join('');
+}
+Array.from(document.querySelectorAll('.tab-btn')).forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active')); $('tab-'+btn.dataset.tab).classList.add('active'); if(btn.dataset.tab==='composicao') renderComposicao(); if(btn.dataset.tab==='orcamento') renderOrcamentos();}));
+function abrirTab(tab){document.querySelector(`.tab-btn[data-tab="${tab}"]`)?.click()}
+
+function limparMP(){['mp-id','mp-nome','mp-categoria','mp-fornecedor','mp-codigo','mp-obs'].forEach(id=>$(id).value=''); $('mp-unidade').value='m²'; $('mp-valor').value='0'; $('mp-perda').value='0'; $('mp-estoque').value='0'; $('mp-estoque-minimo').value='0';}
+async function salvarMP(){if(!val('mp-nome')) return toast('Informe o nome da matéria-prima.'); const payload={nome:val('mp-nome'),categoria:val('mp-categoria'),unidade_medida:val('mp-unidade'),valor_unitario:num('mp-valor'),perda_percentual:num('mp-perda'),fornecedor:val('mp-fornecedor'),estoque:num('mp-estoque'),estoque_minimo:num('mp-estoque-minimo'),codigo_interno:val('mp-codigo'),observacoes:val('mp-obs')}; try{setStatus('Salvando...','salvando'); const id=val('mp-id'); const r=id?await supabase.from('materias_primas').update(payload).eq('id',id):await supabase.from('materias_primas').insert(payload); if(r.error) throw r.error; limparMP(); await loadAll();}catch(e){setStatus('Erro','erro'); toast('Erro ao salvar matéria-prima: '+e.message)}}
+function editarMP(id){const m=materias.find(x=>x.id===id); if(!m)return; $('mp-id').value=m.id; $('mp-nome').value=m.nome||''; $('mp-categoria').value=m.categoria||''; $('mp-unidade').value=m.unidade_medida||'m²'; $('mp-valor').value=m.valor_unitario||0; $('mp-perda').value=m.perda_percentual||0; $('mp-estoque').value=m.estoque||0; $('mp-estoque-minimo').value=m.estoque_minimo||0; $('mp-fornecedor').value=m.fornecedor||''; $('mp-codigo').value=m.codigo_interno||''; $('mp-obs').value=m.observacoes||''; abrirTab('materia'); window.scrollTo({top:0,behavior:'smooth'});}
+async function excluirMP(id){if(!confirm('Excluir esta matéria-prima?'))return; try{const r=await supabase.from('materias_primas').delete().eq('id',id); if(r.error) throw r.error; await loadAll();}catch(e){toast('Erro ao excluir: '+e.message)}}
+function renderMaterias(){const q=normaliza(val('mp-busca')); let arr=materias.filter(m=>!q||normaliza(`${m.nome} ${m.categoria} ${m.codigo_interno}`).includes(q)); $('mp-lista').innerHTML = arr.length? arr.map(m=>{const baixo=Number(m.estoque_minimo||0)>0 && Number(m.estoque||0)<=Number(m.estoque_minimo||0); return `<div class="item"><div class="item-top"><div><div class="item-title">${esc(m.nome)} ${baixo?'<span class="badge cancelado">estoque baixo</span>':''}</div><div class="item-meta">${esc(m.categoria||'Sem categoria')} · ${esc(m.unidade_medida)} · perda ${m.perda_percentual||0}% · estoque ${m.estoque||0} · mínimo ${m.estoque_minimo||0}<br>Fornecedor: ${esc(m.fornecedor||'-')} · Código: ${esc(m.codigo_interno||'-')}</div></div><div class="price">${fmt(m.valor_unitario)}</div></div><div class="actions"><button class="mini blue" onclick="editarMP('${m.id}')">Editar</button><button class="mini danger" onclick="excluirMP('${m.id}')">Excluir</button></div></div>`}).join(''):'<p class="empty">Nenhuma matéria-prima cadastrada.</p>';}
+
+function limparProduto(){['prod-id','prod-nome','prod-categoria','prod-desc'].forEach(id=>$(id).value=''); $('prod-margem').value='40'; $('prod-tipo').value='por_area';}
+async function salvarProduto(){if(!val('prod-nome')) return toast('Informe o nome do produto.'); const payload={nome:val('prod-nome'),categoria:val('prod-categoria'),descricao:val('prod-desc'),margem_padrao:num('prod-margem'),tipo_calculo:val('prod-tipo'),ativo:true}; try{setStatus('Salvando...','salvando'); const id=val('prod-id'); const r=id?await supabase.from('produtos').update(payload).eq('id',id):await supabase.from('produtos').insert(payload); if(r.error) throw r.error; limparProduto(); await loadAll(); abrirTab('produtos');}catch(e){setStatus('Erro','erro'); toast('Erro ao salvar produto: '+e.message)}}
+function editarProduto(id){const p=produtos.find(x=>x.id===id); if(!p)return; $('prod-id').value=p.id; $('prod-nome').value=p.nome||''; $('prod-categoria').value=p.categoria||''; $('prod-desc').value=p.descricao||''; $('prod-margem').value=p.margem_padrao||40; $('prod-tipo').value=p.tipo_calculo||'por_area'; if($('prod-calc-produto')){$('prod-calc-produto').value=p.id; $('prod-calc-margem').value=p.margem_padrao||40;} abrirTab('produtos'); window.scrollTo({top:0,behavior:'smooth'});}
+async function excluirProduto(id){if(!confirm('Excluir este produto e sua composição?'))return; try{const r=await supabase.from('produtos').delete().eq('id',id); if(r.error) throw r.error; await loadAll();}catch(e){toast('Erro ao excluir: '+e.message)}}
+function compCount(pid){return composicoes.filter(c=>c.produto_id===pid).length}
+function renderProdutos(){const q=normaliza(val('prod-busca')); let arr=produtos.filter(p=>!q||normaliza(`${p.nome} ${p.categoria}`).includes(q)); $('prod-lista').innerHTML = arr.length? arr.map(p=>`<div class="item"><div class="item-top"><div><div class="item-title">${esc(p.nome)}</div><div class="item-meta">${esc(p.categoria||'Sem categoria')} · ${esc(p.tipo_calculo)} · margem ${p.margem_padrao||0}% · ${compCount(p.id)} item(ns) na composição<br>${esc(p.descricao||'')}</div></div><span class="badge pendente">receita sem medida fixa</span></div><div class="actions"><button class="mini blue" onclick="editarProduto('${p.id}')">Editar</button><button class="mini secondary" onclick="irComposicao('${p.id}')">Composição</button><button class="mini danger" onclick="excluirProduto('${p.id}')">Excluir</button></div></div>`).join(''):'<p class="empty">Nenhum produto cadastrado.</p>';}
+function calcularCustoProdutoSimulado(pid, largura, altura, qtd){
+  const produto=produtos.find(p=>p.id===pid);
+  const comps=composicoes.filter(c=>c.produto_id===pid);
+  if(!produto) throw new Error('Selecione um produto para simular.');
+  if(!comps.length) throw new Error('Este produto ainda não possui composição cadastrada.');
+  largura=Number(largura||0); altura=Number(altura||0); qtd=Math.max(1,Number(qtd||1));
+  const areaM2=(largura/100)*(altura/100), areaTotal=areaM2*qtd, perimetroTotal=((largura/100)+(altura/100))*2*qtd;
+  const base={largura,altura,qtd,areaM2,areaTotal,perimetroTotal,temposMaquina:{}};
+  let custoTotal=0,custoMateriais=0,custoHoraMaquina=0,custoHoraHomem=0,detalhes=[];
+  comps.forEach(c=>{
+    const m=c.materias_primas||materias.find(x=>x.id===c.materia_prima_id)||{};
+    const consumo=calcularConsumoItem(c,base), perda=Number(m.perda_percentual||0), consumoFinal=consumo*(1+perda/100), custo=consumoFinal*Number(m.valor_unitario||0);
+    custoTotal+=custo;
+    let grupo='materiais';
+    if(c.tipo_consumo==='hora_maquina'){grupo='hora_maquina'; custoHoraMaquina+=custo;}
+    else if(c.tipo_consumo==='hora_homem'||c.tipo_consumo==='por_hora'){grupo='hora_homem'; custoHoraHomem+=custo;}
+    else {custoMateriais+=custo;}
+    detalhes.push({material:m.nome||'',unidade:m.unidade_medida||'',tipo_consumo:c.tipo_consumo,grupo,fator_formatado:formatarFator(c),valor_unitario:Number(m.valor_unitario||0),perda_percentual:perda,consumo,consumo_final:consumoFinal,custo});
+  });
+  return {produto,largura_cm:largura,altura_cm:altura,quantidade:qtd,area_m2:areaM2,area_total:areaTotal,perimetro_total:perimetroTotal,custo_total:custoTotal,custo_materiais:custoMateriais,custo_hora_maquina:custoHoraMaquina,custo_hora_homem:custoHoraHomem,detalhes};
+}
+function renderSimuladorProduto(resultado, margem, precoDesejado, modo){
+  const custo=resultado.custo_total;
+  let margemFinal=Number(margem||0), precoVenda=custo*(1+margemFinal/100);
+  if(modo==='preco'){
+    precoVenda=Number(precoDesejado||0);
+    margemFinal=custo>0?((precoVenda-custo)/custo)*100:0;
+  }
+  const lucro=precoVenda-custo, precoUnit=precoVenda/resultado.quantidade;
+  $('prod-calc-resultado').innerHTML = `<div class="sim-result-grid">
+    <div class="box"><small>Custo materiais</small><br><strong>${fmt(resultado.custo_materiais)}</strong></div>
+    <div class="box"><small>Hora máquina</small><br><strong>${fmt(resultado.custo_hora_maquina)}</strong></div>
+    <div class="box"><small>Hora homem</small><br><strong>${fmt(resultado.custo_hora_homem)}</strong></div>
+    <div class="box"><small>Custo total</small><br><strong>${fmt(custo)}</strong></div>
+    <div class="box"><small>Venda sugerida</small><br><strong>${fmt(precoVenda)}</strong></div>
+    <div class="box"><small>Lucro bruto</small><br><strong>${fmt(lucro)}</strong></div>
+    <div class="box"><small>Margem aplicada</small><br><strong>${margemFinal.toLocaleString('pt-BR',{maximumFractionDigits:2})}%</strong></div>
+    <div class="box"><small>Preço unitário</small><br><strong>${fmt(precoUnit)}</strong></div>
+    <div class="box"><small>Área total</small><br><strong>${m2fmt(resultado.area_total)}</strong></div>
+    <div class="box"><small>Quantidade</small><br><strong>${resultado.quantidade}</strong></div>
+  </div>
+  <div class="sim-dica">Use essa simulação para escolher a margem padrão do produto. Depois clique em <strong>Aplicar margem no cadastro</strong> e salve o produto.</div>
+  <table class="table sim-table"><thead><tr><th>Item da composição</th><th>Tipo</th><th>Fator</th><th>Consumo final</th><th>Custo</th></tr></thead><tbody>
+    ${resultado.detalhes.map(d=>`<tr><td><strong>${esc(d.material)}</strong><br><span class="muted">${fmt(d.valor_unitario)} / ${esc(d.unidade)}</span></td><td>${esc(tipoConsumoNome(d.tipo_consumo))}</td><td>${esc(d.fator_formatado)}</td><td>${(d.consumo_final||0).toLocaleString('pt-BR',{maximumFractionDigits:4})} ${esc(d.unidade)}</td><td><strong>${fmt(d.custo)}</strong></td></tr>`).join('')}
+  </tbody></table>`;
+  $('prod-calc-resultado').dataset.margemCalculada=String(Math.max(0,margemFinal));
+}
+function calcularProdutoNaAba(){
+  try{
+    const modo=val('prod-calc-modo')||'margem';
+    const r=calcularCustoProdutoSimulado(val('prod-calc-produto'),num('prod-calc-largura'),num('prod-calc-altura'),num('prod-calc-qtd'));
+    renderSimuladorProduto(r,num('prod-calc-margem'),num('prod-calc-preco'),modo);
+  }catch(e){toast(e.message)}
+}
+function aplicarMargemSimulada(){
+  const margem=$('prod-calc-resultado')?.dataset?.margemCalculada;
+  if(margem===undefined || margem==='') return toast('Calcule primeiro para aplicar a margem.');
+  $('prod-margem').value=(Number(margem)||0).toFixed(2);
+  const pid=val('prod-calc-produto');
+  if(pid && !val('prod-id')) editarProduto(pid);
+  $('prod-margem').value=(Number(margem)||0).toFixed(2);
+  toast('Margem aplicada no cadastro do produto. Clique em Salvar produto para gravar.');
+}
+function preencherSimuladorPeloProduto(){const p=produtos.find(x=>x.id===val('prod-calc-produto')); if(p){$('prod-calc-margem').value=p.margem_padrao||40;}}
+
+function limparCliente(){['cli-id','cli-nome','cli-documento','cli-telefone','cli-whatsapp','cli-email','cli-endereco','cli-cidade','cli-obs'].forEach(id=>$(id).value=''); $('cli-tipo').value='final';}
+async function salvarCliente(){if(!val('cli-nome')) return toast('Informe o nome do cliente.'); const payload={nome:val('cli-nome'),documento:val('cli-documento'),telefone:val('cli-telefone'),whatsapp:val('cli-whatsapp'),email:val('cli-email'),endereco:val('cli-endereco'),cidade:val('cli-cidade'),tipo_cliente:val('cli-tipo'),observacoes:val('cli-obs')}; try{setStatus('Salvando...','salvando'); const id=val('cli-id'); const r=id?await supabase.from('clientes').update(payload).eq('id',id):await supabase.from('clientes').insert(payload); if(r.error) throw r.error; limparCliente(); await loadAll(); abrirTab('clientes');}catch(e){setStatus('Erro','erro'); toast('Erro ao salvar cliente: '+e.message)}}
+function editarCliente(id){const c=clientes.find(x=>x.id===id); if(!c)return; $('cli-id').value=c.id; $('cli-nome').value=c.nome||''; $('cli-documento').value=c.documento||''; $('cli-telefone').value=c.telefone||''; $('cli-whatsapp').value=c.whatsapp||''; $('cli-email').value=c.email||''; $('cli-endereco').value=c.endereco||''; $('cli-cidade').value=c.cidade||''; $('cli-tipo').value=c.tipo_cliente||'final'; $('cli-obs').value=c.observacoes||''; abrirTab('clientes'); window.scrollTo({top:0,behavior:'smooth'});}
+async function excluirCliente(id){if(!confirm('Excluir este cliente? Os orçamentos antigos continuam salvos com o nome.'))return; try{const r=await supabase.from('clientes').delete().eq('id',id); if(r.error) throw r.error; await loadAll();}catch(e){toast('Erro ao excluir: '+e.message)}}
+function usarClienteNoOrc(id){const c=clientes.find(x=>x.id===id); if(!c)return; abrirTab('orcamento'); setTimeout(()=>{$('orc-cliente-id').value=c.id; preencherClienteOrc();},0)}
+function renderClientes(){const q=normaliza(val('cli-busca')); let arr=clientes.filter(c=>!q||normaliza(`${c.nome} ${c.documento} ${c.whatsapp} ${c.cidade}`).includes(q)); $('cli-lista').innerHTML = arr.length? arr.map(c=>`<div class="item"><div class="item-top"><div><div class="item-title">${esc(c.nome)}</div><div class="item-meta">${esc(c.tipo_cliente||'final')} · Doc: ${esc(c.documento||'-')} · WhatsApp: ${esc(c.whatsapp||'-')} · ${esc(c.cidade||'')}<br>${esc(c.email||'')} ${c.endereco?' · '+esc(c.endereco):''}</div></div></div><div class="actions"><button class="mini blue" onclick="editarCliente('${c.id}')">Editar</button><button class="mini secondary" onclick="usarClienteNoOrc('${c.id}')">Orçar</button><button class="mini danger" onclick="excluirCliente('${c.id}')">Excluir</button></div></div>`).join(''):'<p class="empty">Nenhum cliente cadastrado.</p>';}
+function preencherClienteOrc(){const c=clientes.find(x=>x.id===val('orc-cliente-id')); if(!c)return; $('orc-cliente').value=c.nome||''; $('orc-whatsapp').value=c.whatsapp||c.telefone||''; const margens={final:40,revenda:30,governo:70,parceiro:25}; if(margens[c.tipo_cliente]!==undefined) $('orc-margem').value=margens[c.tipo_cliente]; if(ultimoCalculo) calcularOrcamento();}
+
+const consumoInfo={
+  por_area:{label:'Consumo por m² *',ajuda:'Informe quantos m² do material consome para cada 1 m² do produto. Ex: 1 = mesma área; 1.10 = 10% a mais.',step:'0.0001',valor:'1',unidade:'m² por m²',nome:'Material por área'},
+  por_metro_linear:{label:'Consumo por metro linear *',ajuda:'Informe quantos metros do material consome para cada 1 metro linear/perímetro do produto.',step:'0.0001',valor:'1',unidade:'m por m linear',nome:'Material por metro linear'},
+  por_unidade:{label:'Consumo por unidade *',ajuda:'Informe quantas unidades do material são usadas para cada unidade do produto. Ex: 4 ilhós por faixa.',step:'1',valor:'1',unidade:'un por peça',nome:'Material por unidade'},
+  fixo:{label:'Consumo fixo *',ajuda:'Informe uma quantidade fixa do material para o orçamento inteiro, sem multiplicar por medida ou quantidade.',step:'0.0001',valor:'1',unidade:'fixo no orçamento',nome:'Material fixo'},
+  hora_maquina:{label:'Tempo padrão de máquina (minutos por unidade) *',ajuda:'Informe um tempo padrão. Na aba Orçamento, este tempo aparecerá para ser ajustado conforme cada serviço.',step:'1',valor:'10',unidade:'min de máquina por unidade',nome:'Hora máquina'},
+  hora_homem:{label:'Tempo de mão de obra (minutos por unidade) *',ajuda:'Informe em minutos. Ex: 15 = 15 minutos de hora homem por unidade. O sistema converte para hora no cálculo.',step:'1',valor:'15',unidade:'min de mão de obra por unidade',nome:'Hora homem'},
+  por_hora:{label:'Tempo de produção por unidade (minutos) *',ajuda:'Tipo legado. Use hora_homem para novos cadastros. O sistema converte minutos para hora.',step:'1',valor:'15',unidade:'min por unidade',nome:'Por hora legado'}
+}
+function atualizarCampoFator(reset=false){const tipo=val('comp-tipo')||'por_area', info=consumoInfo[tipo]||consumoInfo.por_area; $('comp-fator-label').textContent=info.label; $('comp-fator-ajuda').textContent=info.ajuda; $('comp-fator').step=info.step; if(reset) $('comp-fator').value=info.valor; $('comp-formula-ajuda').textContent='Uso atual: '+info.nome+' · unidade do fator: '+info.unidade+'.';}
+function formatarFator(c){const tipo=c.tipo_consumo||'por_area', fator=Number(c.fator_consumo||0), info=consumoInfo[tipo]||consumoInfo.por_area; if(tipo==='por_hora'||tipo==='hora_maquina'||tipo==='hora_homem') return `${fator.toLocaleString('pt-BR',{maximumFractionDigits:2})} min/un (${(fator/60).toLocaleString('pt-BR',{maximumFractionDigits:4})} h/un)`; return `${fator.toLocaleString('pt-BR',{maximumFractionDigits:4})} ${info.unidade}`;}
+function tipoConsumoNome(tipo){return (consumoInfo[tipo]||{}).nome||tipo;}
+async function adicionarComposicao(){if(!val('comp-produto')||!val('comp-materia')) return toast('Selecione produto e matéria-prima.'); const payload={produto_id:val('comp-produto'),materia_prima_id:val('comp-materia'),tipo_consumo:val('comp-tipo'),fator_consumo:num('comp-fator')||0,observacao:val('comp-obs')}; if(payload.fator_consumo<=0) return toast('Informe um fator de consumo maior que zero.'); try{const r=await supabase.from('produto_composicao').insert(payload); if(r.error) throw r.error; $('comp-materia').value=''; atualizarCampoFator(true); $('comp-obs').value=''; await loadAll(); $('comp-produto').value=payload.produto_id; renderComposicao();}catch(e){toast('Erro ao adicionar composição: '+e.message)}}
+async function excluirComp(id){if(!confirm('Remover este item da composição?'))return; try{const prodId=val('comp-produto'); const r=await supabase.from('produto_composicao').delete().eq('id',id); if(r.error) throw r.error; await loadAll(); $('comp-produto').value=prodId; renderComposicao();}catch(e){toast('Erro: '+e.message)}}
+function renderComposicao(){const pid=val('comp-produto'); if(!pid){$('comp-lista').innerHTML='<p class="empty">Selecione um produto para ver a composição.</p>';return} const arr=composicoes.filter(c=>c.produto_id===pid); const p=produtos.find(x=>x.id===pid); if(!arr.length){$('comp-lista').innerHTML=`<div class="alert">Produto selecionado: <strong>${esc(p?.nome||'')}</strong>. Ainda não há matérias-primas vinculadas.</div>`;return} $('comp-lista').innerHTML = `<h3>Composição: ${esc(p?.nome||'')}</h3><table class="table"><thead><tr><th>Matéria-prima</th><th>Tipo consumo</th><th>Fator ajustado</th><th>Custo base</th><th></th></tr></thead><tbody>${arr.map(c=>{const m=c.materias_primas||materias.find(x=>x.id===c.materia_prima_id)||{};return `<tr><td><strong>${esc(m.nome)}</strong><br><span class="muted">${esc(m.unidade_medida)} · perda ${m.perda_percentual||0}%</span></td><td>${esc(tipoConsumoNome(c.tipo_consumo))}<br><span class="muted">${esc(c.tipo_consumo)}</span></td><td>${esc(formatarFator(c))}</td><td>${fmt(m.valor_unitario||0)} / ${esc(m.unidade_medida||'un')}</td><td><button class="mini danger" onclick="excluirComp('${c.id}')">Remover</button></td></tr>`}).join('')}</tbody></table>`;}
+
+function compsHoraMaquinaProduto(pid){return composicoes.filter(c=>c.produto_id===pid && c.tipo_consumo==='hora_maquina');}
+function tempoMaquinaInputId(compId){return 'tempo-maquina-'+String(compId).replace(/[^a-zA-Z0-9_-]/g,'');}
+function renderTemposMaquina(force=false){
+  const pid=val('orc-produto');
+  const comps=compsHoraMaquinaProduto(pid);
+  const box=$('orc-tempos-maquina'), lista=$('orc-tempos-maquina-lista');
+  if(!box||!lista) return;
+  if(!pid || !comps.length){
+    box.classList.add('hidden');
+    lista.innerHTML='';
+    lista.dataset.signature='';
+    return;
+  }
+  box.classList.remove('hidden');
+
+  // Evita recriar os inputs enquanto o usuário digita.
+  // Antes, o cálculo redesenhava este bloco a cada tecla e o campo perdia o foco após o primeiro número.
+  const signature = comps.map(c=>`${c.id}:${c.materia_prima_id}:${c.fator_consumo}`).join('|');
+  if(!force && lista.dataset.signature===signature && lista.querySelectorAll('.tempo-maquina-input').length===comps.length){
+    return;
+  }
+
+  const valoresAtuais={};
+  lista.querySelectorAll('.tempo-maquina-input').forEach(inp=>{valoresAtuais[inp.dataset.compId]=inp.value});
+  lista.dataset.signature=signature;
+  lista.innerHTML=comps.map(c=>{
+    const m=c.materias_primas||materias.find(x=>x.id===c.materia_prima_id)||{};
+    const id=tempoMaquinaInputId(c.id);
+    const padrao=Number(c.fator_consumo||0)||10;
+    const atual=valoresAtuais[c.id];
+    const valor=atual!==undefined&&atual!==''?atual:padrao;
+    return `<div><label>${esc(m.nome||'Hora máquina')} (min/un)</label><input type="number" id="${id}" class="tempo-maquina-input" data-comp-id="${esc(c.id)}" step="1" min="0" value="${esc(valor)}"><p class="muted" style="margin-top:4px">Padrão da composição: ${padrao} min/un · custo ${fmt(m.valor_unitario||0)}/hora</p></div>`;
+  }).join('');
+  lista.querySelectorAll('.tempo-maquina-input').forEach(inp=>inp.addEventListener('input',()=>{if(ultimoCalculo) calcularOrcamento()}));
+}
+function temposMaquinaOrcamento(){
+  const dados={};
+  document.querySelectorAll('.tempo-maquina-input').forEach(inp=>{dados[inp.dataset.compId]=parseFloat(inp.value||'0')||0});
+  return dados;
+}
+
+function calcularConsumoItem(c, base){const fator=Number(c.fator_consumo||0), tipo=c.tipo_consumo||'por_area'; if(tipo==='por_area') return base.areaTotal*fator; if(tipo==='por_metro_linear') return base.perimetroTotal*fator; if(tipo==='por_unidade') return base.qtd*fator; if(tipo==='fixo') return fator; if(tipo==='hora_maquina'){const min=(base.temposMaquina&&base.temposMaquina[c.id]!==undefined)?Number(base.temposMaquina[c.id]||0):fator; return base.qtd*(min/60);} if(tipo==='hora_homem'||tipo==='por_hora') return base.qtd*(fator/60); return 0;}
+function calcularOrcamento(){const produto=produtos.find(p=>p.id===val('orc-produto')); if(!produto){toast('Selecione um produto.'); return null} const comps=composicoes.filter(c=>c.produto_id===produto.id); if(!comps.length){toast('Este produto ainda não possui composição cadastrada.'); return null} renderTemposMaquina(false); const largura=num('orc-largura'), altura=num('orc-altura'), qtd=Math.max(1,num('orc-qtd')||1), margem=num('orc-margem'); const areaM2=(largura/100)*(altura/100), areaTotal=areaM2*qtd, perimetroTotal=((largura/100)+(altura/100))*2*qtd; const temposMaquina=temposMaquinaOrcamento(); const base={largura,altura,qtd,areaM2,areaTotal,perimetroTotal,temposMaquina}; let detalhes=[], custoTotal=0, custoMateriais=0, custoHoraMaquina=0, custoHoraHomem=0; comps.forEach(c=>{const m=c.materias_primas||materias.find(x=>x.id===c.materia_prima_id)||{}; const consumo=calcularConsumoItem(c,base), perda=Number(m.perda_percentual||0), consumoFinal=consumo*(1+perda/100), custo=consumoFinal*Number(m.valor_unitario||0); custoTotal+=custo; let grupo='materiais'; if(c.tipo_consumo==='hora_maquina') {grupo='hora_maquina'; custoHoraMaquina+=custo;} else if(c.tipo_consumo==='hora_homem'||c.tipo_consumo==='por_hora') {grupo='hora_homem'; custoHoraHomem+=custo;} else {custoMateriais+=custo;} const tempoInformado=(c.tipo_consumo==='hora_maquina')?((temposMaquina[c.id]!==undefined?Number(temposMaquina[c.id]||0):Number(c.fator_consumo||0))):null; detalhes.push({material:m.nome||'',categoria:m.categoria||'',unidade:m.unidade_medida||'',tipo_consumo:c.tipo_consumo,tipo_consumo_nome:tipoConsumoNome(c.tipo_consumo),grupo,fator:Number(c.fator_consumo||0),tempo_informado_minutos:tempoInformado,fator_formatado:formatarFator(c),valor_unitario:Number(m.valor_unitario||0),perda_percentual:perda,consumo,consumo_final:consumoFinal,custo,observacao:c.observacao||''});}); const margemValor=custoTotal*(margem/100); const bruto=custoTotal+margemValor; const subtotalValor=bruto; const descontoPct=0; const descontoValorDireto=num('orc-desc-valor'); const descontoValor=Math.min(descontoValorDireto, subtotalValor); const precoVenda=Math.max(0,subtotalValor-descontoValor); const entrada=Math.min(num('orc-entrada'),precoVenda); const saldo=Math.max(0,precoVenda-entrada); const precoUnit=precoVenda/qtd; ultimoCalculo={produto,largura_cm:largura,altura_cm:altura,quantidade:qtd,area_m2:areaM2,area_total:areaTotal,custo_total:custoTotal,custo_materiais:custoMateriais,custo_hora_maquina:custoHoraMaquina,custo_hora_homem:custoHoraHomem,tempos_maquina:temposMaquina,margem_percentual:margem,margem_valor:margemValor,desconto_percentual:descontoPct,desconto_valor:descontoValor,subtotal_valor:subtotalValor,preco_venda:precoVenda,preco_unitario:precoUnit,entrada_valor:entrada,saldo_valor:saldo,validade_dias:parseInt(val('orc-validade')||'7'),prazo_entrega:val('orc-prazo'),forma_pagamento:val('orc-pagamento'),observacoes_cliente:val('orc-obs'),detalhes}; renderResultado(); return ultimoCalculo;}
+function detalheAberto(open){document.querySelectorAll('#res-detalhes details').forEach(d=>d.open=open)}
+function qtdFmt(v){return (Number(v)||0).toLocaleString('pt-BR',{minimumFractionDigits:0,maximumFractionDigits:4})}
+function renderResultado(){
+  const r=ultimoCalculo; if(!r)return;
+  $('orc-resultado').classList.remove('hidden');
+  $('res-area').textContent=m2fmt(r.area_m2); $('res-area-total').textContent=m2fmt(r.area_total); $('res-subtotal').textContent=fmt(r.subtotal_valor||((r.preco_venda||0)+(r.desconto_valor||0))); $('res-desconto').textContent=fmt(r.desconto_valor); $('res-venda').textContent=fmt(r.preco_venda); $('res-unit').textContent=fmt(r.preco_unitario); $('res-entrada').textContent=fmt(r.entrada_valor); $('res-saldo').textContent=fmt(r.saldo_valor); $('res-validade').textContent=(r.validade_dias||7)+' dias'; $('res-prazo').textContent=r.prazo_entrega||'-';
+  const totalItens = r.detalhes.length;
+  const detalhesHtml = r.detalhes.map((d,i)=>{
+    const aberto = i===0 ? ' open' : '';
+    const obs = d.observacao ? `<div class="formula">Observação da composição: ${esc(d.observacao)}</div>` : '';
+    const formulaConsumo = d.tipo_consumo==='hora_maquina' ? `${esc(d.tipo_consumo_nome||d.tipo_consumo)} · tempo informado no orçamento: ${qtdFmt(d.tempo_informado_minutos)} min/un (${qtdFmt((d.tempo_informado_minutos||0)/60)} h/un)` : `${esc(d.tipo_consumo_nome||d.tipo_consumo)} · ${esc(d.fator_formatado||('fator '+d.fator))}`;
+    return `<details class="detalhe-card"${aberto}>
+      <summary><span class="detalhe-head"><strong>${esc(d.material)}</strong><span class="badge pendente">${esc(d.unidade)}</span></span><span class="detalhe-custo">${fmt(d.custo)}</span></summary>
+      <div class="detalhe-body">
+        <div class="calc-grid">
+          <div class="calc-box"><small>Tipo de consumo</small><strong>${esc(d.tipo_consumo_nome||d.tipo_consumo)}</strong></div>
+          <div class="calc-box"><small>Fator cadastrado</small><strong>${esc(d.fator_formatado||d.fator)}</strong></div>
+          <div class="calc-box"><small>Valor unitário</small><strong>${fmt(d.valor_unitario)} / ${esc(d.unidade)}</strong></div>
+          <div class="calc-box"><small>Perda técnica</small><strong>${qtdFmt(d.perda_percentual)}%</strong></div>
+          <div class="calc-box"><small>Consumo calculado</small><strong>${qtdFmt(d.consumo)} ${esc(d.unidade)}</strong></div>
+          <div class="calc-box"><small>Consumo com perda</small><strong>${qtdFmt(d.consumo_final)} ${esc(d.unidade)}</strong></div>
+          <div class="calc-box"><small>Custo do item</small><strong>${fmt(d.custo)}</strong></div>
+          <div class="calc-box"><small>Participação no custo</small><strong>${r.custo_total?((d.custo/r.custo_total)*100).toLocaleString('pt-BR',{maximumFractionDigits:2}):'0'}%</strong></div>
+        </div>
+        <div class="formula">Cálculo: ${formulaConsumo} → consumo ${qtdFmt(d.consumo)} ${esc(d.unidade)} + perda ${qtdFmt(d.perda_percentual)}% = ${qtdFmt(d.consumo_final)} ${esc(d.unidade)} × ${fmt(d.valor_unitario)} = ${fmt(d.custo)}</div>
+        ${obs}
+      </div>
+    </details>`;
+  }).join('');
+  $('res-detalhes').innerHTML = `<div class="detalhe-toolbar"><button class="mini secondary" onclick="detalheAberto(true)">Maximizar todos</button><button class="mini secondary" onclick="detalheAberto(false)">Minimizar todos</button><span class="muted" style="align-self:center">${totalItens} item(ns) da composição para conferência interna</span></div>${detalhesHtml}<div class="detalhe-total"><strong>Resumo interno:</strong> materiais ${fmt(r.custo_materiais||0)} + hora máquina ${fmt(r.custo_hora_maquina||0)} + hora homem ${fmt(r.custo_hora_homem||0)} = custo interno ${fmt(r.custo_total)}. Subtotal: ${fmt(r.subtotal_valor||((r.preco_venda||0)+(r.desconto_valor||0)))}. Desconto: ${fmt(r.desconto_valor)}. Total final: <strong>${fmt(r.preco_venda)}</strong></div>`;
+}
+async function salvarOrcamento(){const r=calcularOrcamento(); if(!r)return; const c=clientes.find(x=>x.id===val('orc-cliente-id')); const nome=`${r.produto.nome} ${r.largura_cm}x${r.altura_cm}cm`; const payload={cliente_id:val('orc-cliente-id')||null,cliente:val('orc-cliente'),cliente_telefone:c?.telefone||'',cliente_whatsapp:val('orc-whatsapp')||c?.whatsapp||'',cliente_email:c?.email||'',cliente_documento:c?.documento||'',nome,produto_id:r.produto.id,produto_nome:r.produto.nome,largura_cm:r.largura_cm,altura_cm:r.altura_cm,quantidade:r.quantidade,area_m2:r.area_m2,area_total:r.area_total,custo_total:r.custo_total,custo_materiais:r.custo_materiais,custo_hora_maquina:r.custo_hora_maquina,custo_hora_homem:r.custo_hora_homem,tempos_maquina:r.tempos_maquina,margem_percentual:r.margem_percentual,margem_valor:r.margem_valor,desconto_percentual:r.desconto_percentual,desconto_valor:r.desconto_valor,preco_venda:r.preco_venda,preco_unitario:r.preco_unitario,entrada_valor:r.entrada_valor,saldo_valor:r.saldo_valor,validade_dias:r.validade_dias,prazo_entrega:r.prazo_entrega,forma_pagamento:r.forma_pagamento,observacoes_cliente:r.observacoes_cliente,status:val('orc-status-form')||'pendente',detalhes:{materiais:r.detalhes,tempos_maquina:r.tempos_maquina,resumo:{custo_materiais:r.custo_materiais,custo_hora_maquina:r.custo_hora_maquina,custo_hora_homem:r.custo_hora_homem,subtotal_valor:r.subtotal_valor}}}; try{const id=val('orc-id'); const resp=id?await supabase.from('orcamentos').update(payload).eq('id',id):await supabase.from('orcamentos').insert(payload); if(resp.error) throw resp.error; limparOrcamento(false); await loadAll(); abrirTab('orcamento'); toast('Orçamento salvo com sucesso.');}catch(e){toast('Erro ao salvar orçamento: '+e.message)}}
+function limparOrcamento(clearResult=true){['orc-id','orc-cliente','orc-whatsapp','orc-prazo','orc-pagamento','orc-obs'].forEach(id=>$(id).value=''); $('orc-cliente-id').value=''; $('orc-produto').value=''; $('orc-qtd').value='1'; $('orc-largura').value='35'; $('orc-altura').value='45'; $('orc-margem').value='40'; $('orc-desc-pct').value='0'; $('orc-desc-valor').value='0'; $('orc-entrada').value='0'; $('orc-validade').value='7'; $('orc-status-form').value='pendente'; renderTemposMaquina(); if(clearResult){ultimoCalculo=null; $('orc-resultado').classList.add('hidden');}}
+function produtoSelecionadoMudou(){const p=produtos.find(x=>x.id===val('orc-produto')); if(p) $('orc-margem').value=p.margem_padrao||40; renderTemposMaquina(true); if(ultimoCalculo) calcularOrcamento();}
+function renderOrcamentos(){const q=normaliza(val('orc-busca')), st=val('orc-status'); let arr=orcamentos.filter(o=>(!st||o.status===st)&&(!q||normaliza(`${o.numero_orcamento} ${o.nome} ${o.cliente} ${o.produto_nome}`).includes(q))); $('orc-lista').innerHTML = arr.length? arr.map(o=>`<div class="item"><div class="item-top"><div><div class="item-title">${esc(o.numero_orcamento||'Sem número')} · ${esc(o.nome||o.produto_nome)}</div><div class="item-meta">Cliente: ${esc(o.cliente||'-')} · WhatsApp: ${esc(o.cliente_whatsapp||'-')} · ${o.largura_cm||0}x${o.altura_cm||0}cm · qtd ${o.quantidade||1} · área ${m2fmt(o.area_total||0)}<br>Status: <span class="badge ${esc(o.status||'pendente')}">${esc((o.status||'pendente').replace('_',' '))}</span> · ${new Date(o.criado_em).toLocaleDateString('pt-BR')} · Validade: ${o.validade_dias||7} dias</div></div><div class="price">${fmt(o.preco_venda||0)}</div></div><div class="actions"><button class="mini blue" onclick="editarOrc('${o.id}')">Editar</button><button class="mini secondary" data-pdf-orc-id="${o.id}" onclick="pdfOrcSalvo('${o.id}')">PDF</button><button class="mini secondary" onclick="whatsOrcSalvo('${o.id}')">WhatsApp</button><button class="mini ok" onclick="statusOrc('${o.id}','aprovado')">Aprovar</button><button class="mini orange" onclick="statusOrc('${o.id}','em_producao')">Produção</button><button class="mini secondary" onclick="statusOrc('${o.id}','finalizado')">Finalizar</button><button class="mini danger" onclick="excluirOrc('${o.id}')">Excluir</button></div></div>`).join(''):'<p class="empty">Nenhum orçamento salvo.</p>';}
+function editarOrc(id){const o=orcamentos.find(x=>x.id===id); if(!o)return; $('orc-id').value=o.id; $('orc-cliente-id').value=o.cliente_id||''; $('orc-cliente').value=o.cliente||''; $('orc-whatsapp').value=o.cliente_whatsapp||''; $('orc-produto').value=o.produto_id||''; $('orc-largura').value=o.largura_cm||0; $('orc-altura').value=o.altura_cm||0; $('orc-qtd').value=o.quantidade||1; $('orc-margem').value=o.margem_percentual||0; $('orc-desc-pct').value='0'; $('orc-desc-valor').value=o.desconto_valor||0; $('orc-entrada').value=o.entrada_valor||0; $('orc-validade').value=o.validade_dias||7; $('orc-prazo').value=o.prazo_entrega||''; $('orc-pagamento').value=o.forma_pagamento||''; $('orc-obs').value=o.observacoes_cliente||''; $('orc-status-form').value=o.status||'pendente'; renderTemposMaquina(true); const tempos=o.tempos_maquina||o.detalhes?.tempos_maquina||{}; Object.keys(tempos).forEach(cid=>{const inp=$(tempoMaquinaInputId(cid)); if(inp) inp.value=tempos[cid];}); calcularOrcamento(); abrirTab('orcamento'); window.scrollTo({top:0,behavior:'smooth'});}
+async function statusOrc(id,status){const extra={status}; if(status==='aprovado') extra.aprovado_em=new Date().toISOString(); if(status==='enviado') extra.enviado_em=new Date().toISOString(); if(status==='finalizado') extra.finalizado_em=new Date().toISOString(); try{const r=await supabase.from('orcamentos').update(extra).eq('id',id); if(r.error) throw r.error; await loadAll();}catch(e){toast('Erro: '+e.message)}}
+async function excluirOrc(id){if(!confirm('Excluir este orçamento?'))return; try{const r=await supabase.from('orcamentos').delete().eq('id',id); if(r.error) throw r.error; await loadAll();}catch(e){toast('Erro: '+e.message)}}
+function dadosAtualParaSaida(){const r=calcularOrcamento(); if(!r)return null; return {numero_orcamento:'Prévia',cliente:val('orc-cliente'),cliente_whatsapp:val('orc-whatsapp'),produto_nome:r.produto.nome,...r,detalhes:{materiais:r.detalhes,tempos_maquina:r.tempos_maquina,resumo:{custo_materiais:r.custo_materiais,custo_hora_maquina:r.custo_hora_maquina,custo_hora_homem:r.custo_hora_homem,subtotal_valor:r.subtotal_valor}}}}
+function gerarMensagemWhats(data){return `Olá${data.cliente?' '+data.cliente:''}, segue seu orçamento.\n\nOrçamento: ${data.numero_orcamento||''}\nProduto: ${data.produto_nome||data.produto?.nome||'-'}\nMedida: ${data.largura_cm} x ${data.altura_cm} cm\nQuantidade: ${data.quantidade}\nValor total: ${fmt(data.preco_venda)}\nEntrada: ${fmt(data.entrada_valor||0)}\nSaldo: ${fmt(data.saldo_valor||data.preco_venda||0)}\nValidade: ${data.validade_dias||7} dias\nPrazo: ${data.prazo_entrega||'-'}\nPagamento: ${data.forma_pagamento||'-'}\n\n${data.observacoes_cliente||''}`;}
+function abrirWhats(data){let tel=limpaTel(data.cliente_whatsapp||val('orc-whatsapp')); if(tel && !tel.startsWith('55')) tel='55'+tel; const msg=encodeURIComponent(gerarMensagemWhats(data)); window.open(`https://wa.me/${tel}?text=${msg}`,'_blank');}
+function whatsAtual(){const d=dadosAtualParaSaida(); if(d) abrirWhats(d)}
+function whatsOrcSalvo(id){const o=orcamentos.find(x=>x.id===id); if(o) abrirWhats(o)}
+function itensOrcamentoPDF(data){return Array.isArray(data.detalhes) ? data.detalhes : (data.detalhes?.materiais || [])}
+function statusNomePDF(s){return String(s||'pendente').replace('_',' ')}
+function subtotalOrcamento(data){
+  const resumo = data?.detalhes?.resumo || {};
+  return Number(data?.subtotal_valor ?? resumo.subtotal_valor ?? ((Number(data?.preco_venda)||0)+(Number(data?.desconto_valor)||0)))||0;
+}
+function normalizarDadosPDF(data){
+  const resumo = data?.detalhes?.resumo || {};
+  const subtotal = subtotalOrcamento(data||{});
+  const desconto = Number(data?.desconto_valor || 0);
+  const total = Number(data?.preco_venda ?? Math.max(0, subtotal - desconto)) || 0;
+  const entrada = Number(data?.entrada_valor || 0);
+  return {
+    ...(data||{}),
+    numero_orcamento: data?.numero_orcamento || 'Prévia',
+    cliente: data?.cliente || '-',
+    cliente_whatsapp: data?.cliente_whatsapp || '',
+    cliente_documento: data?.cliente_documento || '',
+    produto_nome: data?.produto_nome || data?.produto?.nome || data?.nome || '-',
+    quantidade: Number(data?.quantidade || 1),
+    largura_cm: Number(data?.largura_cm || 0),
+    altura_cm: Number(data?.altura_cm || 0),
+    area_m2: Number(data?.area_m2 || 0),
+    area_total: Number(data?.area_total || 0),
+    subtotal_valor: subtotal,
+    desconto_valor: desconto,
+    preco_venda: total,
+    entrada_valor: entrada,
+    saldo_valor: Number(data?.saldo_valor ?? Math.max(0, total - entrada)) || 0,
+    validade_dias: data?.validade_dias || 7,
+    prazo_entrega: data?.prazo_entrega || '-',
+    forma_pagamento: data?.forma_pagamento || '-',
+    observacoes_cliente: data?.observacoes_cliente || '',
+    status: data?.status || 'pendente',
+    custo_materiais: Number(data?.custo_materiais ?? resumo.custo_materiais ?? 0),
+    custo_hora_maquina: Number(data?.custo_hora_maquina ?? resumo.custo_hora_maquina ?? 0),
+    custo_hora_homem: Number(data?.custo_hora_homem ?? resumo.custo_hora_homem ?? 0)
+  };
+}
+function montarHTMLOrcamentoPDF(data){
+  data = normalizarDadosPDF(data);
+
+  const subtotal=subtotalOrcamento(data);
+  const obs=data.observacoes_cliente?`<div class="pdf-box full"><small>Observações para o cliente</small><strong>${esc(data.observacoes_cliente)}</strong></div>`:'';
+  return `<div class="pdf-page">
+    <div class="pdf-header"><div><h1>Orçamento ${esc(data.numero_orcamento||'Prévia')}</h1><p>Comunicação Visual</p></div><div class="pdf-status">${esc(statusNomePDF(data.status||'prévia'))}</div></div>
+    <div class="pdf-section"><h2>Cliente</h2><div class="pdf-grid three">
+      <div class="pdf-box"><small>Cliente</small><strong>${esc(data.cliente||'-')}</strong></div>
+      <div class="pdf-box"><small>WhatsApp</small><strong>${esc(data.cliente_whatsapp||'-')}</strong></div>
+      <div class="pdf-box"><small>CPF/CNPJ</small><strong>${esc(data.cliente_documento||'-')}</strong></div>
+    </div></div>
+    <div class="pdf-section destaque"><h2>Produto, medida e quantidade</h2><div class="pdf-grid four">
+      <div class="pdf-box wide"><small>Produto</small><strong>${esc(data.produto_nome||data.produto?.nome||'-')}</strong></div>
+      <div class="pdf-box"><small>Quantidade</small><strong>${qtdFmt(data.quantidade||1)}</strong></div>
+      <div class="pdf-box"><small>Largura</small><strong>${qtdFmt(data.largura_cm||0)} cm</strong></div>
+      <div class="pdf-box"><small>Altura</small><strong>${qtdFmt(data.altura_cm||0)} cm</strong></div>
+    </div></div>
+    <div class="pdf-section"><h2>Resumo do orçamento</h2><div class="pdf-grid five">
+      <div class="pdf-box"><small>Área unitária</small><strong>${m2fmt(data.area_m2||0)}</strong></div>
+      <div class="pdf-box"><small>Área total</small><strong>${m2fmt(data.area_total||0)}</strong></div>
+      <div class="pdf-box"><small>Subtotal</small><strong>${fmt(subtotal)}</strong></div>
+      <div class="pdf-box"><small>Desconto</small><strong>${fmt(data.desconto_valor||0)}</strong></div>
+      <div class="pdf-box price-box"><small>Total final</small><strong>${fmt(data.preco_venda||0)}</strong></div>
+    </div></div>
+    <div class="pdf-section"><h2>Condições comerciais</h2><div class="pdf-grid five">
+      <div class="pdf-box"><small>Entrada</small><strong>${fmt(data.entrada_valor||0)}</strong></div>
+      <div class="pdf-box"><small>Saldo</small><strong>${fmt(data.saldo_valor||0)}</strong></div>
+      <div class="pdf-box"><small>Validade</small><strong>${esc(data.validade_dias||7)} dias</strong></div>
+      <div class="pdf-box"><small>Prazo</small><strong>${esc(data.prazo_entrega||'-')}</strong></div>
+      <div class="pdf-box"><small>Pagamento</small><strong>${esc(data.forma_pagamento||'-')}</strong></div>
+      ${obs}
+    </div></div>
+  </div>`;
+}
+function gerarHTMLOrcamento(data){return montarHTMLOrcamentoPDF(data);}
+function gerarPDF(data){
+  try{
+    data = normalizarDadosPDF(data);
+    setStatus('Preparando PDF...','salvando');
+    const html = montarHTMLOrcamentoPDF(data);
+    const titulo = `Orçamento ${data.numero_orcamento||'Prévia'}`;
+    const nomeArquivo = `orcamento-${(data.numero_orcamento||data.produto_nome||'produto').replace(/[^a-z0-9]/gi,'-')}`;
+    const printCSS = `
+      *{box-sizing:border-box}body{font-family:Arial,Helvetica,sans-serif;background:#eef0f3;margin:0;color:#1f2937}.print-wrap{max-width:920px;margin:22px auto;background:#fff;padding:26px;border-radius:14px}.pdf-head{border-bottom:3px solid #111827;padding-bottom:14px;margin-bottom:18px}.pdf-head h1{font-size:25px;margin:0;color:#111827}.pdf-head p{margin:5px 0 0;color:#6b7280}.pdf-section{border:1px solid #e5e7eb;border-radius:12px;padding:14px;margin:14px 0;background:#fff}.pdf-section.destaque{background:#f8fafc;border:2px solid #111827}.pdf-section h2{font-size:15px;margin:0 0 10px;color:#111827}.pdf-grid{display:grid;gap:10px}.pdf-grid.three{grid-template-columns:repeat(3,1fr)}.pdf-grid.four{grid-template-columns:2fr 1fr 1fr 1fr}.pdf-grid.five{grid-template-columns:repeat(5,1fr)}.pdf-box{border:1px solid #e5e7eb;border-radius:10px;background:#f9fafb;padding:10px;min-height:58px}.pdf-box small{display:block;color:#6b7280;font-size:11px;margin-bottom:5px}.pdf-box strong{font-size:14px;color:#111827;word-break:break-word}.pdf-box.price-box{background:#ecfdf5;border-color:#86efac}.pdf-box.price-box strong{font-size:18px;color:#15803d}.pdf-box.wide{grid-column:auto}.pdf-foot{margin-top:22px;color:#6b7280;font-size:11px;border-top:1px solid #e5e7eb;padding-top:12px}.print-actions{max-width:920px;margin:16px auto 0;display:flex;gap:8px;justify-content:flex-end}.print-actions button{background:#111827;color:#fff;border:0;border-radius:8px;padding:10px 14px;font-weight:bold;cursor:pointer}.print-actions button.secondary{background:#fff;color:#111827;border:1px solid #d1d5db}@media(max-width:700px){.pdf-grid.three,.pdf-grid.four,.pdf-grid.five{grid-template-columns:1fr}.print-wrap{margin:0;border-radius:0}}@media print{body{background:#fff}.print-actions{display:none}.print-wrap{max-width:none;margin:0;padding:0;border-radius:0}.pdf-section{break-inside:avoid}.pdf-head{break-inside:avoid}@page{size:A4;margin:12mm}}
+    `;
+    const w = window.open('', '_blank');
+    if(!w){
+      setStatus('Erro','erro');
+      toast('O navegador bloqueou a janela do PDF. Libere pop-ups para este site e clique em PDF novamente.');
+      return;
+    }
+    w.document.open();
+    w.document.write(`<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><title>${esc(titulo)}</title><style>${printCSS}</style></head><body><div class="print-actions"><button onclick="window.print()">Salvar em PDF / Imprimir</button><button class="secondary" onclick="window.close()">Fechar</button></div><main class="print-wrap">${html}<div class="pdf-foot">Arquivo sugerido: ${esc(nomeArquivo)}.pdf<br>Documento gerado pelo sistema de orçamento.</div></main><script>window.onload=function(){setTimeout(function(){window.focus();window.print();},350)}<\/script></body></html>`);
+    w.document.close();
+    setStatus('Sincronizado');
+  }catch(e){console.error(e); setStatus('Erro','erro'); toast('Erro ao gerar PDF: '+e.message)}
+}
+
+async function pdfAtual(){const d=dadosAtualParaSaida(); if(d) await gerarPDF(d)}
+async function pdfOrcSalvo(id){
+  const o=orcamentos.find(x=>String(x.id)===String(id));
+  if(!o){toast('Orçamento salvo não encontrado. Clique em Atualizar e tente novamente.'); return;}
+  await gerarPDF(normalizarDadosPDF(o));
+}
+
+
+// Segurança extra: garante que o botão PDF dos orçamentos salvos funcione mesmo se o onclick inline falhar.
+document.addEventListener('click', async (ev)=>{
+  const btn = ev.target?.closest?.('[data-pdf-orc-id]');
+  if(!btn) return;
+  ev.preventDefault();
+  await pdfOrcSalvo(btn.getAttribute('data-pdf-orc-id'));
+});
+
+$('btn-mp-salvar').onclick=salvarMP; $('btn-mp-limpar').onclick=limparMP; $('btn-mp-refresh').onclick=loadAll; $('mp-busca').oninput=renderMaterias;
+$('btn-prod-salvar').onclick=salvarProduto; $('btn-prod-limpar').onclick=limparProduto; $('btn-prod-refresh').onclick=loadAll; $('prod-busca').oninput=renderProdutos; $('btn-prod-calc').onclick=calcularProdutoNaAba; $('btn-prod-aplicar-margem').onclick=aplicarMargemSimulada; $('prod-calc-produto').onchange=preencherSimuladorPeloProduto; ['prod-calc-largura','prod-calc-altura','prod-calc-qtd','prod-calc-margem','prod-calc-preco','prod-calc-modo'].forEach(id=>$(id).addEventListener('input',()=>{if($('prod-calc-produto').value) calcularProdutoNaAba()}));
+$('btn-cli-salvar').onclick=salvarCliente; $('btn-cli-limpar').onclick=limparCliente; $('btn-cli-refresh').onclick=loadAll; $('cli-busca').oninput=renderClientes;
+$('btn-comp-add').onclick=adicionarComposicao; $('btn-comp-refresh').onclick=loadAll; $('comp-produto').onchange=renderComposicao; $('comp-tipo').onchange=()=>atualizarCampoFator(true);
+$('orc-cliente-id').onchange=preencherClienteOrc; $('orc-produto').onchange=produtoSelecionadoMudou; $('btn-orc-calcular').onclick=calcularOrcamento; $('btn-orc-salvar').onclick=salvarOrcamento; $('btn-orc-pdf').onclick=pdfAtual; $('btn-orc-whats').onclick=whatsAtual; $('btn-orc-limpar').onclick=()=>limparOrcamento(true); $('btn-orc-refresh').onclick=loadAll; $('orc-busca').oninput=renderOrcamentos; $('orc-status').onchange=renderOrcamentos;
+['orc-largura','orc-altura','orc-qtd','orc-margem','orc-desc-pct','orc-desc-valor','orc-entrada','orc-validade','orc-prazo','orc-pagamento','orc-obs'].forEach(id=>$(id).addEventListener('input',()=>{if(ultimoCalculo) calcularOrcamento()}));
+window.detalheAberto=detalheAberto; window.editarMP=editarMP; window.excluirMP=excluirMP; window.editarProduto=editarProduto; window.excluirProduto=excluirProduto; window.irComposicao=irComposicao; window.editarCliente=editarCliente; window.excluirCliente=excluirCliente; window.usarClienteNoOrc=usarClienteNoOrc; window.excluirComp=excluirComp; window.editarOrc=editarOrc; window.statusOrc=statusOrc; window.excluirOrc=excluirOrc; window.pdfOrcSalvo=pdfOrcSalvo; window.normalizarDadosPDF=normalizarDadosPDF; window.whatsOrcSalvo=whatsOrcSalvo;
+atualizarCampoFator(false);
+loadAll();
+</script>
+</body>
+</html>
